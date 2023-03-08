@@ -1,12 +1,20 @@
-import './App.css';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+
+import Navbar from './components/Navbar';
+import Home from './components/Home';
+import Cart from './components/Cart';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h2>Learning Redux Toolkit</h2>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Navbar/>
+      <div className="container">
+        <Routes>
+          <Route path="/" element={<Home/>}></Route>
+          <Route path="/cart" element={<Cart/>}></Route>
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
